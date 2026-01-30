@@ -5,39 +5,42 @@
 ### Problema
 > Qual problema financeiro seu agente resolve?
 
-[Sua descrição aqui]
+Muitas pessoas têm dificuldade em controlar seus gastos diários, o que resulta em despesas desnecessárias, falta de planejamento financeiro e, em alguns casos, endividamento. A ausência de alertas inteligentes e de uma visão clara sobre para onde o dinheiro está indo torna o controle financeiro confuso e pouco eficiente.
 
 ### Solução
 > Como o agente resolve esse problema de forma proativa?
 
-[Sua descrição aqui]
+O assistente virtual com Inteligência Artificial atua como um aliado financeiro, monitorando despesas, analisando padrões de consumo e enviando alertas personalizados quando os gastos fogem do planejado. Com uma interface simples e inteligente, ele ajuda o usuário a tomar decisões mais conscientes, promovendo organização financeira e economia no dia a dia.
 
 ### Público-Alvo
 > Quem vai usar esse agente?
 
-[Sua descrição aqui]
+Pessoas que desejam melhorar o controle de suas finanças pessoais, como jovens adultos, trabalhadores autônomos, estudantes e famílias que buscam organizar seus gastos mensais. Também é indicado para usuários que preferem soluções digitais práticas e automatizadas para gestão financeira.
 
 ---
 
 ## Persona e Tom de Voz
 
 ### Nome do Agente
-[Nome escolhido]
+ContaZen
 
 ### Personalidade
 > Como o agente se comporta? (ex: consultivo, direto, educativo)
 
-[Sua descrição aqui]
+- Consultiva
+- Proativa e Educativa
+- Nunca julga os gastos do Cliente
+
 
 ### Tom de Comunicação
 > Formal, informal, técnico, acessível?
 
-[Sua descrição aqui]
+O tom de comunicação é acessível, claro e amigável, evitando termos excessivamente técnicos.
 
 ### Exemplos de Linguagem
-- Saudação: [ex: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: [ex: "Entendi! Deixa eu verificar isso para você."]
-- Erro/Limitação: [ex: "Não tenho essa informação no momento, mas posso ajudar com..."]
+- Saudação: "Olá! Bem-vindo ao ContaZen. Estou aqui para te ajudar a acompanhar seus gastos e manter suas finanças sob controle."
+- Confirmação: "Entendi! Vou analisar seus gastos e já te aviso se algo estiver fora do planejado."
+- Erro/Limitação: "No momento não tenho dados suficientes para fazer essa análise, mas posso te ajudar a registrar ou revisar seus gastos."
 
 ---
 
@@ -47,7 +50,7 @@
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
+    A[Cliente] -->|Mensagem| B["Streamlit (Interface Visual)"]
     B --> C[LLM]
     C --> D[Base de Conhecimento]
     D --> C
@@ -59,10 +62,9 @@ flowchart TD
 
 | Componente | Descrição |
 |------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Interface | [Streamlit](https://streamlit.io/) |
+| LLM | Ollama (Local) |
+| Base de Conhecimento | JSON/CSV mockados na pasta `data`|
 
 ---
 
@@ -70,12 +72,15 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+- [ ] Agente responde apenas com base nos dados fornecidos pelo usuário ou previamente cadastrados
+- [ ] Alertas e análises seguem regras financeiras definidas (ex: limite mensal)
+- [ ] Quando não possui informação suficiente, o agente informa claramente
+- [ ] Não realiza recomendações financeiras complexas sem dados adequados do usuário
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+- Não substitui um contador, economista ou consultor financeiro profissional
+- Não realiza investimentos, transferências bancárias ou operações financeiras reais
+- Não fornece aconselhamento financeiro avançado ou personalizado sem dados completos
+- Não acessa contas bancárias sem autorização explícita do usuário
